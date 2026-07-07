@@ -37,6 +37,11 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "allowedHosts": [
+              "superb-achievement-production-3e75.up.railway.app"
+            ]
+          },
           "configurations": {
             "production": {
               "buildTarget": "web:build:production"
@@ -53,5 +58,4 @@
   "cli": {
     "analytics": false
   }
-}
 }

@@ -29,10 +29,6 @@ COPY packages/testing/package.json packages/testing/package.json
 
 # Fetch dependencies once (cached, reproducible from lock file)
 RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store \
-    pnpm config set network-timeout 600000 && \
-    pnpm config set fetch-retries 5 && \
-    pnpm config set fetch-retry-mintimeout 20000 && \
-    pnpm config set fetch-retry-maxtimeout 120000 && \
     pnpm fetch --frozen-lockfile
 
 # Install dependencies (will use fetched cache)

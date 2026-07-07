@@ -2,12 +2,16 @@
   "name": "tadkar-platform",
   "private": true,
   "packageManager": "pnpm@11.9.0",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "build": "pnpm -r build",
+    "build": "pnpm --filter @tadkar/api prisma:ensure && pnpm --filter @tadkar/api build",
     "dev": "pnpm --parallel --filter @tadkar/api --filter @tadkar/web dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
+    "start": "pnpm --filter @tadkar/api start",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
     "test:integration": "pnpm --filter @tadkar/api test:integration",

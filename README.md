@@ -43,3 +43,16 @@ Deferred until after approval:
 - complete reporting suite;
 - enterprise security hardening;
 - advanced organization administration.
+
+## Railway
+
+The Railway service now uses the Node runtime instead of Docker.
+
+Root build/start commands:
+
+```powershell
+pnpm --filter @tadkar/api prisma:ensure && pnpm --filter @tadkar/api build
+pnpm --filter @tadkar/api start
+```
+
+The service expects `DATABASE_URL` to point at the Railway Postgres database and `WEB_ORIGIN` to match the public web app URL when CORS is needed.

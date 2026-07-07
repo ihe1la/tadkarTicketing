@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "ng serve",
     "build": "ng build",
+    "start": "node server.mjs",
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "vitest run --passWithNoTests",
     "test:e2e": "playwright test"

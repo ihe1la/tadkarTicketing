@@ -61,6 +61,9 @@ COPY tsconfig.base.json ./
 
 ENV NODE_ENV=production
 
+# Generate the Prisma Client from the prototype schema before TypeScript compilation.
+RUN pnpm --filter @tadkar/api prisma:ensure
+
 # Build API and web
 RUN pnpm --filter @tadkar/api build && \
     pnpm --filter @tadkar/web build
@@ -81,8 +84,11 @@ COPY packages/config/package.json packages/config/package.json
 COPY packages/contracts/package.json packages/contracts/package.json
 COPY packages/testing/package.json packages/testing/package.json
 
-# Install production dependencies only (no cache needed for prod image)
-RUN pnpm install --frozen-lockfile --prefer-offline --prod
+# Install dependencies and generate the Prisma Client used at runtime.
+# Prisma is currently a dev dependency, so it must be present during generation.
+RUN pnpm install --frozen-lockfile --prefer-offline
+COPY apps/api/prisma ./apps/api/prisma
+RUN pnpm --filter @tadkar/api exec prisma generate --schema=prisma/prototype.prisma
 
 # Copy built artifacts from builder
 COPY --from=builder /workspace/apps/api/dist ./apps/api/dist

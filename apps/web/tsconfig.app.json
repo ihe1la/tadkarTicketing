@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "outDir": "../../dist/web", "types": [] },
+  "files": ["src/prototype.ts"],
+  "include": ["src/**/*.d.ts"]
+}

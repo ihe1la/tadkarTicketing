@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<ScanGroup ExportedOn="2026-06-22">
+<Scan>
+        <Name><![CDATA[scan_name]]></Name>
+        <ShortName><![CDATA[scan_short_name]]></ShortName>
+        <StartURL><![CDATA[ticketing.tadkar.com]]></StartURL>
+        <StartTime><![CDATA[2026-06-22T17:26:35.180895+03:30]]></StartTime>
+        <FinishTime><![CDATA[2026-06-22T17:29:36.868651+03:30]]></FinishTime>
+        <ScanTime><![CDATA[2 minutes, 51 seconds]]></ScanTime>
+        <Aborted><![CDATA[False]]></Aborted>
+        <Responsive><![CDATA[True]]></Responsive>
+        <Banner><![CDATA[]]></Banner>
+        <Os><![CDATA[Unknown]]></Os>
+        <WebServer><![CDATA[None]]></WebServer>
+        <Technologies>
+            <![CDATA[
+            ]]>
+        </Technologies>
+        <Crawler StartUrl="https://ticketing.tadkar.com/">
+            <Cookies>
+            </Cookies>
+            <SiteFiles>
+<SiteFile id="1">
+                    <Name><![CDATA[https://ticketing.tadkar.com/]]></Name>
+                    <URL><![CDATA[/]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/]]></FullURL>
+                    <Inputs>
+                                <Variable Name="/[*]" Type="Path Fragment"/>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="2">
+                    <Name><![CDATA[assets]]></Name>
+                    <URL><![CDATA[/assets/]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="3">
+                    <Name><![CDATA[dx-styles]]></Name>
+                    <URL><![CDATA[/assets/dx-styles/]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/dx-styles/]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="4">
+                    <Name><![CDATA[dx.dark.css]]></Name>
+                    <URL><![CDATA[/assets/dx-styles/dx.dark.css]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/dx-styles/dx.dark.css]]></FullURL>
+                </SiteFile>
+<SiteFile id="5">
+                    <Name><![CDATA[dx.light.css]]></Name>
+                    <URL><![CDATA[/assets/dx-styles/dx.light.css]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/dx-styles/dx.light.css]]></FullURL>
+                </SiteFile>
+<SiteFile id="6">
+                    <Name><![CDATA[icons]]></Name>
+                    <URL><![CDATA[/assets/dx-styles/icons/]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/dx-styles/icons/]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="7">
+                    <Name><![CDATA[env.js]]></Name>
+                    <URL><![CDATA[/assets/env.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/assets/env.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="8">
+                    <Name><![CDATA[clientaccesspolicy.xml]]></Name>
+                    <URL><![CDATA[/clientaccesspolicy.xml]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/clientaccesspolicy.xml]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="9">
+                    <Name><![CDATA[crossdomain.xml]]></Name>
+                    <URL><![CDATA[/crossdomain.xml]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/crossdomain.xml]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="10">
+                    <Name><![CDATA[formbuilder]]></Name>
+                    <URL><![CDATA[/formbuilder/]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/formbuilder/]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="11">
+                    <Name><![CDATA[api]]></Name>
+                    <URL><![CDATA[/formbuilder/api]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/formbuilder/api]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="12">
+                    <Name><![CDATA[main.d0e5ed6950d2fb4ec413.js]]></Name>
+                    <URL><![CDATA[/main.d0e5ed6950d2fb4ec413.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/main.d0e5ed6950d2fb4ec413.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="13">
+                    <Name><![CDATA[polyfills-es5.11367f10fb7c797873b6.js]]></Name>
+                    <URL><![CDATA[/polyfills-es5.11367f10fb7c797873b6.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/polyfills-es5.11367f10fb7c797873b6.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="14">
+                    <Name><![CDATA[polyfills.30449a4df570ebb6de91.js]]></Name>
+                    <URL><![CDATA[/polyfills.30449a4df570ebb6de91.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/polyfills.30449a4df570ebb6de91.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="15">
+                    <Name><![CDATA[robots.txt]]></Name>
+                    <URL><![CDATA[/robots.txt]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/robots.txt]]></FullURL>
+                    <Inputs>
+                                <Variable Name="Referer" Type="HTTP Header"/>
+                                <Variable Name="User-Agent" Type="HTTP Header"/>
+                                <Variable Name="X-Forwarded-For" Type="HTTP Header"/>
+                                <Variable Name="sl-session" Type="Cookie"/>
+                    </Inputs>
+                </SiteFile>
+<SiteFile id="16">
+                    <Name><![CDATA[runtime.2546e7c33269b863412d.js]]></Name>
+                    <URL><![CDATA[/runtime.2546e7c33269b863412d.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/runtime.2546e7c33269b863412d.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="17">
+                    <Name><![CDATA[scripts.d82ce23ada868c486fc0.js]]></Name>
+                    <URL><![CDATA[/scripts.d82ce23ada868c486fc0.js]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/scripts.d82ce23ada868c486fc0.js]]></FullURL>
+                </SiteFile>
+<SiteFile id="18">
+                    <Name><![CDATA[styles.fa845d731759e7939287.css]]></Name>
+                    <URL><![CDATA[/styles.fa845d731759e7939287.css]]></URL>
+                    <FullURL><![CDATA[https://ticketing.tadkar.com/styles.fa845d731759e7939287.css]]></FullURL>
+                </SiteFile>
+            </SiteFiles>
+        </Crawler>
+        <ReportItems>
+<ReportItem id="1" color="red">
+                <Name><![CDATA[Insecure Transportation Security Protocol Supported (TLS 1.0)]]></Name>
+                <ModuleName><![CDATA[/Scripts/PerServer/SSL_Audit.script]]></ModuleName>
+                <Details><![CDATA[The SSL server (port: 443) encrypts traffic using TLSv1.0.<br/><br/>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[high]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[An attacker may be able to exploit this problem to conduct man-in-the-middle attacks and decrypt communications between the affected service and clients.]]></Impact>
+                <Description><![CDATA[The web server supports encryption through TLS 1.0, which was formally deprecated in March 2021 as a result of inherent security issues.
+            In addition, TLS 1.0 is not considered to be &quot;strong cryptography&quot; as defined and required by the PCI Data Security Standard 3.2(.1) when used to protect sensitive information transferred to or from web sites.
+		According to PCI, &quot;30 June 2018 is the deadline for disabling SSL/early TLS and implementing a more secure encryption protocol – TLS 1.1 or higher (TLS v1.2 is strongly encouraged) in order to meet the PCI Data Security Standard (PCI DSS) for safeguarding payment data.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[It is recommended to disable TLS 1.0 and replace it with TLS 1.2 or higher.]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="326"><![CDATA[CWE-326]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:M/Au:N/C:P/I:P/A:N]]></Descriptor>
+                  <Score><![CDATA[5.8]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Medium]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[Partial]]></C>
+                  <I><![CDATA[Partial]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N]]></Descriptor>
+                  <Score><![CDATA[5.4]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[High]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <S><![CDATA[Changed]]></S>
+                  <C><![CDATA[Low]]></C>
+                  <I><![CDATA[Low]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N]]></Descriptor>
+                  <Score><![CDATA[6.3]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[High]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <VC><![CDATA[Low]]></VC>
+                  <VI><![CDATA[Low]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[Low]]></SC>
+                  <SI><![CDATA[Low]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[RFC 8996: Deprecating TLS 1.0 and TLS 1.1]]></Database>
+                      <URL><![CDATA[https://tools.ietf.org/html/rfc8996]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[Are You Ready for 30 June 2018? Saying Goodbye to SSL/early TLS]]></Database>
+                      <URL><![CDATA[https://blog.pcisecuritystandards.org/are-you-ready-for-30-june-2018-sayin-goodbye-to-ssl-early-tls]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[PCI 3.1 and TLS 1.2 (Cloudflare Support)]]></Database>
+                      <URL><![CDATA[https://support.cloudflare.com/hc/en-us/articles/205043158-PCI-3-1-and-TLS-1-2]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+<ReportItem id="2" color="orange">
+                <Name><![CDATA[Insecure Transportation Security Protocol Supported (TLS 1.1)]]></Name>
+                <ModuleName><![CDATA[/Scripts/PerServer/SSL_Audit.script]]></ModuleName>
+                <Details><![CDATA[The SSL server (port: 443) encrypts traffic using TLSv1.1.<br/><br/>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[medium]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[An attacker may be able to exploit this problem to conduct man-in-the-middle attacks and decrypt communications between the affected service and clients.]]></Impact>
+                <Description><![CDATA[The web server supports encryption through TLS 1.1, which was formally deprecated in March 2021 as a result of inherent security issues.
+            When aiming for Payment Card Industry (PCI) Data Security Standard (DSS) compliance, it is recommended to use TLS 1.2 or higher instead.
+		According to PCI, &quot;30 June 2018 is the deadline for disabling SSL/early TLS and implementing a more secure encryption protocol – TLS 1.1 or higher (TLS v1.2 is strongly encouraged) in order to meet the PCI Data Security Standard (PCI DSS) for safeguarding payment data.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[It is recommended to disable TLS 1.1 and replace it with TLS 1.2 or higher.]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="326"><![CDATA[CWE-326]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:M/Au:N/C:P/I:P/A:N]]></Descriptor>
+                  <Score><![CDATA[5.8]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Medium]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[Partial]]></C>
+                  <I><![CDATA[Partial]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:L/I:L/A:N]]></Descriptor>
+                  <Score><![CDATA[5.4]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[High]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <S><![CDATA[Changed]]></S>
+                  <C><![CDATA[Low]]></C>
+                  <I><![CDATA[Low]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:L/SI:N/SA:N]]></Descriptor>
+                  <Score><![CDATA[6.3]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[High]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <VC><![CDATA[Low]]></VC>
+                  <VI><![CDATA[Low]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[Low]]></SC>
+                  <SI><![CDATA[None]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[RFC 8996: Deprecating TLS 1.0 and TLS 1.1]]></Database>
+                      <URL><![CDATA[https://tools.ietf.org/html/rfc8996]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[Are You Ready for 30 June 2018? Saying Goodbye to SSL/early TLS]]></Database>
+                      <URL><![CDATA[https://blog.pcisecuritystandards.org/are-you-ready-for-30-june-2018-sayin-goodbye-to-ssl-early-tls]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[PCI 3.1 and TLS 1.2 (Cloudflare Support)]]></Database>
+                      <URL><![CDATA[https://support.cloudflare.com/hc/en-us/articles/205043158-PCI-3-1-and-TLS-1-2]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+<ReportItem id="3" color="orange">
+                <Name><![CDATA[SSL Certificate Is About To Expire]]></Name>
+                <ModuleName><![CDATA[/Scripts/PerServer/SSL_Audit.script]]></ModuleName>
+                <Details><![CDATA[<p>The TLS/SSL certificate (serial: 47a623919e7d925c9b30b2968dce8905) will expire in less than <strong>60</strong> days. The certificate validity period is from <strong>Sat Jul 19 2025 12:11:42 GMT+0330 (Iran Standard Time)</strong> to <strong>Sun Jul 19 2026 12:11:41 GMT+0330 (Iran Standard Time)</strong> (26 days left)</p>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[medium]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[If an application server detects an expired certificate with a system it is communicating with, the application server may continue processing data as if nothing happened, or the connection may be abruptly terminated.]]></Impact>
+                <Description><![CDATA[One of the TLS/SSL certificates used by your server is about to expire. <br/><br/> Once the certificate has expired, most web browsers will present end-users with a security warning, asking them to manually confirm the authenticity of your certificate chain. Software or automated systems may silently refuse to connect to the server. <br/><br/> This alert is not necessarily caused by the server (leaf) certificate, but may have been triggered by an intermediate certificate. Please refer to the certificate serial number in the alert details to identify the affected certificate.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[Contact your Certificate Authority to renew the SSL certificate.]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="298"><![CDATA[CWE-298]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:P/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[5.0]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[Partial]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N]]></Descriptor>
+                  <Score><![CDATA[5.3]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <S><![CDATA[Unchanged]]></S>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[Low]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N]]></Descriptor>
+                  <Score><![CDATA[6.9]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[None]]></UI>
+                  <VC><![CDATA[None]]></VC>
+                  <VI><![CDATA[Low]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[None]]></SC>
+                  <SI><![CDATA[None]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[SSL Certificate Is About To Expire]]></Database>
+                      <URL><![CDATA[https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-certificate-is-about-to-expire/]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+<ReportItem id="4" color="green">
+                <Name><![CDATA[Content Security Policy (CSP) Not Implemented]]></Name>
+                <ModuleName><![CDATA[/httpdata/CSP_not_implemented.js]]></ModuleName>
+                <Details><![CDATA[Paths without CSP header:<br/><ul><li>https://ticketing.tadkar.com/</li><br/><li>https://ticketing.tadkar.com/clientaccesspolicy.xml</li><br/><li>https://ticketing.tadkar.com/crossdomain.xml</li><br/><li>https://ticketing.tadkar.com/formbuilder/</li><br/></ul>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[informational]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[CSP can be used to prevent and/or mitigate attacks that involve content/code injection, such as cross-site scripting/XSS attacks, attacks that require embedding a malicious resource, attacks that involve malicious use of iframes, such as clickjacking attacks, and others.]]></Impact>
+                <Description><![CDATA[Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. <br/><br/>
+Content Security Policy (CSP) can be implemented by adding a <strong>Content-Security-Policy</strong> header. The value of this header is a string containing the policy directives describing your Content Security Policy. To implement CSP, you should define lists of allowed origins for the all of the types of resources that your site utilizes. For example, if you have a simple site that needs to load scripts, stylesheets, and images hosted locally, as well as from the jQuery library from their CDN, the CSP header could look like the following:
+<pre><code>
+Content-Security-Policy:
+    default-src 'self';
+    script-src 'self' https://code.jquery.com;
+</code></pre>
+<br/><br/>
+It was detected that your web application doesn't implement Content Security Policy (CSP) as the CSP header is missing from the response. It's recommended to implement Content Security Policy (CSP) into your web application.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[It's recommended to implement Content Security Policy (CSP) into your web application. Configuring Content Security Policy involves adding the <strong>Content-Security-Policy</strong> HTTP header to a web page and giving it values to control resources the user agent is allowed to load for that page.]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[GET / HTTP/1.1
+Referer: https://ticketing.tadkar.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip,deflate,br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+Host: ticketing.tadkar.com
+Connection: Keep-alive
+]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="1021"><![CDATA[CWE-1021]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Required]]></UI>
+                  <S><![CDATA[Changed]]></S>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Active]]></UI>
+                  <VC><![CDATA[None]]></VC>
+                  <VI><![CDATA[None]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[None]]></SC>
+                  <SI><![CDATA[None]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[Content Security Policy (CSP)]]></Database>
+                      <URL><![CDATA[https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[Implementing Content Security Policy]]></Database>
+                      <URL><![CDATA[https://hacks.mozilla.org/2016/02/implementing-content-security-policy/]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+<ReportItem id="5" color="green">
+                <Name><![CDATA[HTTP Strict Transport Security (HSTS) Errors and Warnings]]></Name>
+                <ModuleName><![CDATA[/httpdata/HSTS_not_implemented.js]]></ModuleName>
+                <Details><![CDATA[URLs where HSTS configuration is not according to best practices:<br/><ul><li>https://ticketing.tadkar.com/ - max-age is less that 1 year (31536000); No includeSubDomains directive </li><li>https://ticketing.tadkar.com/clientaccesspolicy.xml - max-age is less that 1 year (31536000); No includeSubDomains directive </li><li>https://ticketing.tadkar.com/crossdomain.xml - max-age is less that 1 year (31536000); No includeSubDomains directive </li><li>https://ticketing.tadkar.com/formbuilder/ - max-age is less that 1 year (31536000); No includeSubDomains directive </li></ul> <br/>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[informational]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[HSTS can be used to prevent and/or mitigate some types of man-in-the-middle (MitM) attacks]]></Impact>
+                <Description><![CDATA[HTTP Strict Transport Security (HSTS) instructs a web browser to only connect to a web site using HTTPS.
+        It was detected that your web application's HTTP Strict Transport Security (HSTS) implementation is not as strict as is typically advisable.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[It is recommended to implement best practices of HTTP Strict Transport Security (HSTS) in your web application. Consult web references for more information.]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[GET / HTTP/1.1
+Referer: https://ticketing.tadkar.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip,deflate,br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+Host: ticketing.tadkar.com
+Connection: Keep-alive
+]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="16"><![CDATA[CWE-16]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Required]]></UI>
+                  <S><![CDATA[Changed]]></S>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Active]]></UI>
+                  <VC><![CDATA[None]]></VC>
+                  <VI><![CDATA[None]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[None]]></SC>
+                  <SI><![CDATA[None]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[hstspreload.org]]></Database>
+                      <URL><![CDATA[https://hstspreload.org/]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[MDN: Strict-Transport-Security]]></Database>
+                      <URL><![CDATA[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+<ReportItem id="6" color="green">
+                <Name><![CDATA[Permissions-Policy header not implemented]]></Name>
+                <ModuleName><![CDATA[/httpdata/permissions_policy.js]]></ModuleName>
+                <Details><![CDATA[Locations without Permissions-Policy header:<br/><ul><li>https://ticketing.tadkar.com/</li><li>https://ticketing.tadkar.com/clientaccesspolicy.xml</li><li>https://ticketing.tadkar.com/crossdomain.xml</li><li>https://ticketing.tadkar.com/assets/dx-styles/icons/</li><li>https://ticketing.tadkar.com/formbuilder/</li><li>https://ticketing.tadkar.com/assets/dx-styles/</li><li>https://ticketing.tadkar.com/assets/</li></ul>]]></Details>
+                <Affects><![CDATA[/]]></Affects>
+                <Parameter><![CDATA[]]></Parameter>
+                <AOP_SourceFile><![CDATA[]]></AOP_SourceFile>
+                <AOP_SourceLine></AOP_SourceLine>
+                <AOP_Additional><![CDATA[]]></AOP_Additional>
+                <IsFalsePositive><![CDATA[]]></IsFalsePositive>
+                <Severity><![CDATA[informational]]></Severity>
+                <Type><![CDATA[configuration]]></Type>
+                <Impact><![CDATA[]]></Impact>
+                <Description><![CDATA[The Permissions-Policy header allows developers to selectively enable and disable use of various browser features and APIs.]]></Description>
+                <DetailedInformation><![CDATA[]]></DetailedInformation>
+                <Recommendation><![CDATA[]]></Recommendation>
+                <TechnicalDetails>
+                    <Request><![CDATA[GET / HTTP/1.1
+Referer: https://ticketing.tadkar.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Encoding: gzip,deflate,br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36
+Host: ticketing.tadkar.com
+Connection: Keep-alive
+]]></Request>
+                </TechnicalDetails>
+                <CWEList>
+                    <CWE id="1021"><![CDATA[CWE-1021]]></CWE>
+                </CWEList>
+                <CVEList>
+                </CVEList>
+                <CVSS>
+                  <Descriptor><![CDATA[AV:N/AC:L/Au:N/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network_Accessible]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <Au><![CDATA[None]]></Au>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS>
+                <CVSS3>
+                  <Descriptor><![CDATA[CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:N/I:N/A:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <TempScore><![CDATA[]]></TempScore>
+                  <EnvScore><![CDATA[]]></EnvScore>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Required]]></UI>
+                  <S><![CDATA[Changed]]></S>
+                  <C><![CDATA[None]]></C>
+                  <I><![CDATA[None]]></I>
+                  <A><![CDATA[None]]></A>
+                  <E><![CDATA[]]></E>
+                  <RL><![CDATA[]]></RL>
+                  <RC><![CDATA[]]></RC>
+                </CVSS3>
+                <CVSS4>
+                  <Descriptor><![CDATA[CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:N/SC:N/SI:N/SA:N]]></Descriptor>
+                  <Score><![CDATA[0.0]]></Score>
+                  <AV><![CDATA[Network]]></AV>
+                  <AC><![CDATA[Low]]></AC>
+                  <PR><![CDATA[None]]></PR>
+                  <UI><![CDATA[Active]]></UI>
+                  <VC><![CDATA[None]]></VC>
+                  <VI><![CDATA[None]]></VI>
+                  <VA><![CDATA[None]]></VA>
+                  <SC><![CDATA[None]]></SC>
+                  <SI><![CDATA[None]]></SI>
+                  <SA><![CDATA[None]]></SA>
+                </CVSS4>
+                <References>
+                    <Reference>
+                      <Database><![CDATA[Permissions-Policy / Feature-Policy (MDN)]]></Database>
+                      <URL><![CDATA[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy]]></URL>
+                    </Reference>
+                    <Reference>
+                      <Database><![CDATA[Permissions Policy (W3C)]]></Database>
+                      <URL><![CDATA[https://www.w3.org/TR/permissions-policy-1/]]></URL>
+                    </Reference>
+                </References>
+            </ReportItem>
+        </ReportItems>
+    </Scan>
+</ScanGroup>

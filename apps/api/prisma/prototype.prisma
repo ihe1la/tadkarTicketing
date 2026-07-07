@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+enum Role {
+  CUSTOMER
+  SUPPORT
+  TEST
+  MANAGER
+  SALES
+  DEVELOPER
+}
+enum TicketStatus {
+  NEW
+  IN_REVIEW
+  AWAITING_CUSTOMER
+  AWAITING_EXPERT
+  REFERRED_TO_TEST
+  TEST_IN_REVIEW
+  RETURNED_TO_SUPPORT
+  CLOSED_RESOLVED
+  CLOSED_REQUIRES_DEVELOPMENT
+}
+model User {
+  id          String @id
+  username    String @unique
+  displayName String
+  role        Role
+  tickets     Ticket[] @relation("CustomerTickets")
+  messages    TicketMessage[]
+  history     StatusHistory[]
+}
+model Employer {
+  id String @id
+  name String
+  tickets Ticket[]
+}
+model Product {
+  id String @id
+  name String
+  tickets Ticket[]
+  faqs Faq[]
+}
+model Department {
+  id String @id
+  name String
+  tickets Ticket[]
+  faqs Faq[]
+}
+model Faq {
+  id String @id
+  question String
+  answer String
+  usageCount Int @default(0)
+  productId String
+  departmentId String
+  product Product @relation(fields: [productId], references: [id])
+  department Department @relation(fields: [departmentId], references: [id])
+}
+model RootCause {
+  id String @id
+  name String
+  tickets Ticket[]
+}
+model Ticket {
+  id String @id @default(cuid())
+  trackingNumber String @unique
+  title String
+  description String
+  status TicketStatus @default(NEW)
+  customerId String
+  employerId String
+  productId String
+  departmentId String
+  rootCauseId String?
+  pbiIdentifier String?
+  probableFixedVersion String?
+  rating Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  firstResponseAt DateTime?
+  customer User @relation("CustomerTickets", fields: [customerId], references: [id])
+  employer Employer @relation(fields: [employerId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
+  department Department @relation(fields: [departmentId], references: [id])
+  rootCause RootCause? @relation(fields: [rootCauseId], references: [id])
+  messages TicketMessage[]
+  history StatusHistory[]
+}
+model TicketMessage {
+  id String @id @default(cuid())
+  ticketId String
+  authorId String
+  body String
+  createdAt DateTime @default(now())
+  ticket Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  author User @relation(fields: [authorId], references: [id])
+}
+model StatusHistory {
+  id String @id @default(cuid())
+  ticketId String
+  actorId String
+  from TicketStatus?
+  to TicketStatus
+  note String?
+  createdAt DateTime @default(now())
+  ticket Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  actor User @relation(fields: [actorId], references: [id])
+}

@@ -1,0 +1,143 @@
+# Production-grade Docker Compose for pnpm monorepo
+# Supports development with hot reload and isolated volumes
+
+services:
+  # ========================================================================
+  # API: NestJS backend service
+  # ========================================================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tadkar-api-dev
+    restart: unless-stopped
+    
+    working_dir: /workspace
+    command: >-
+      sh -c "pnpm --filter @tadkar/api exec prisma generate --schema prisma/prototype.prisma &&
+      pnpm --filter @tadkar/api exec prisma db push --skip-generate --schema prisma/prototype.prisma &&
+      pnpm --filter @tadkar/api seed &&
+      pnpm --filter @tadkar/api dev"
+    
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: file:./dev.db
+      WEB_ORIGIN: http://localhost:4200
+      PORT: 3000
+      # Enable file watching with polling (needed in Docker/WSL)
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: 100
+      # Increase Node heap for development
+      NODE_OPTIONS: --max-old-space-size=2048
+    
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      # Workspace source (live reload)
+      - .:/workspace:cached
+      
+      # Named volumes for isolated node_modules (prevent conflicts)
+      - api-node-modules-v3:/workspace/node_modules
+      - api-package-node-modules-v3:/workspace/apps/api/node_modules
+      - api-dist:/workspace/apps/api/dist
+      
+      # pnpm store cache (improves install performance)
+      - pnpm-store:/pnpm/store
+      
+    
+    networks:
+      - tadkar-network
+    
+    depends_on:
+      - web
+    
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # ========================================================================
+  # WEB: Angular frontend service
+  # ========================================================================
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tadkar-web-dev
+    restart: unless-stopped
+    
+    working_dir: /workspace
+    command: pnpm --filter @tadkar/web dev --host 0.0.0.0 --port 4200 --poll 1000
+    
+    environment:
+      NODE_ENV: development
+      # Enable file watching with polling
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: 100
+      # Increase Node heap for development
+      NODE_OPTIONS: --max-old-space-size=2048
+    
+    ports:
+      - "4200:4200"
+    
+    volumes:
+      # Workspace source (live reload)
+      - .:/workspace:cached
+      
+      # Named volumes for isolated node_modules (prevent conflicts)
+      - web-node-modules-v3:/workspace/node_modules
+      - web-package-node-modules-v3:/workspace/apps/web/node_modules
+      - web-angular-cache:/workspace/apps/web/.angular
+      - web-dist:/workspace/apps/web/dist
+      
+      # pnpm store cache
+      - pnpm-store:/pnpm/store
+      
+    
+    networks:
+      - tadkar-network
+    
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:4200"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+# ============================================================================
+# VOLUMES: Persistent and isolated storage
+# ============================================================================
+volumes:
+  # Shared pnpm store cache across services
+  pnpm-store:
+    driver: local
+  
+  # API isolated node_modules (prevents conflicts with workspace mount)
+  api-node-modules-v3:
+    driver: local
+  api-dist:
+    driver: local
+  api-package-node-modules-v3:
+    driver: local
+  
+  # Web isolated node_modules
+  web-node-modules-v3:
+    driver: local
+  web-package-node-modules-v3:
+    driver: local
+  web-angular-cache:
+    driver: local
+  web-dist:
+    driver: local
+
+# ============================================================================
+# NETWORKS: Service communication
+# ============================================================================
+networks:
+  tadkar-network:
+    driver: bridge

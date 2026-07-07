@@ -1,0 +1,38 @@
+{
+  "name": "@tadkar/api",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run src --passWithNoTests",
+    "test:integration": "vitest run **/*.integration.test.ts",
+    "smoke": "node scripts/demo-smoke.mjs",
+    "prisma:ensure": "node scripts/ensure-prisma-client.mjs",
+    "prisma": "prisma",
+    "seed": "tsx prisma/prototype-seed.ts"
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.12",
+    "@nestjs/core": "^11.1.12",
+    "@nestjs/platform-express": "^11.1.12",
+    "@prisma/client": "6.19.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.16",
+    "@nestjs/testing": "^11.1.12",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.9",
+    "prisma": "6.19.0",
+    "supertest": "^7.2.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "prisma": {
+    "seed": "tsx prisma/prototype-seed.ts"
+  }
+}

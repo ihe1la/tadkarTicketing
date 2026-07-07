@@ -1,0 +1,7 @@
+reference
+analysis/generated
+pnpm-lock.yaml
+dist
+coverage
+apps/api/prisma/schema.prisma
+.pnpm-store

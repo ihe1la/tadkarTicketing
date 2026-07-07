@@ -1,0 +1,24 @@
+{
+  "name": "tadkar-platform",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --parallel --filter @tadkar/api --filter @tadkar/web dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "test:integration": "pnpm --filter @tadkar/api test:integration",
+    "test:e2e": "pnpm --filter @tadkar/web test:e2e",
+    "db:setup": "pnpm --filter @tadkar/api prisma:ensure && pnpm --filter @tadkar/api exec prisma db push --skip-generate --schema prisma/prototype.prisma && pnpm --filter @tadkar/api seed",
+    "db:seed": "pnpm --filter @tadkar/api seed"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "prettier": "^3.8.2",
+    "typescript-eslint": "^8.54.0"
+  }
+}

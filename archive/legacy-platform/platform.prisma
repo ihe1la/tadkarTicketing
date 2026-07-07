@@ -1,0 +1,114 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+enum AccountStatus {
+  ACTIVE
+  LOCKED
+  ARCHIVED
+}
+enum Scope {
+  OWN
+  ORGANIZATION
+  GLOBAL
+}
+model User {
+  id String @id @default(uuid())
+  username String @unique
+  displayName String
+  passwordHash String
+  status AccountStatus @default(ACTIVE)
+  locale String @default("fa")
+  failedLogins Int @default(0)
+  lockedUntil DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  roles UserRole[]
+  positions UserPosition[]
+  refreshTokens RefreshToken[]
+  auditEvents AuditEvent[]
+}
+model Role {
+  id String @id @default(uuid())
+  name String @unique
+  description String?
+  archivedAt DateTime?
+  users UserRole[]
+  permissions RolePermission[]
+}
+model Permission {
+  id String @id @default(uuid())
+  key String @unique
+  description String?
+  roles RolePermission[]
+}
+model UserRole {
+  userId String
+  roleId String
+  scope Scope @default(GLOBAL)
+  organizationUnitId String?
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  organizationUnit OrganizationUnit? @relation(fields: [organizationUnitId], references: [id])
+  @@id([userId, roleId])
+}
+model RolePermission {
+  roleId String
+  permissionId String
+  role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  @@id([roleId, permissionId])
+}
+model OrganizationUnit {
+  id String @id @default(uuid())
+  name String
+  parentId String?
+  archivedAt DateTime?
+  parent OrganizationUnit? @relation("OrgTree", fields: [parentId], references: [id])
+  children OrganizationUnit[] @relation("OrgTree")
+  positions Position[]
+  roles UserRole[]
+}
+model Position {
+  id String @id @default(uuid())
+  title String
+  organizationUnitId String
+  archivedAt DateTime?
+  organizationUnit OrganizationUnit @relation(fields: [organizationUnitId], references: [id])
+  users UserPosition[]
+}
+model UserPosition {
+  userId String
+  positionId String
+  primary Boolean @default(false)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  position Position @relation(fields: [positionId], references: [id], onDelete: Cascade)
+  @@id([userId, positionId])
+}
+model RefreshToken {
+  id String @id @default(uuid())
+  userId String
+  tokenHash String @unique
+  familyId String
+  expiresAt DateTime
+  revokedAt DateTime?
+  replacedById String?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, familyId])
+}
+model AuditEvent {
+  id String @id @default(uuid())
+  actorId String?
+  action String
+  resourceType String
+  resourceId String?
+  correlationId String
+  metadata Json
+  createdAt DateTime @default(now())
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  @@index([action, resourceType, createdAt])
+}

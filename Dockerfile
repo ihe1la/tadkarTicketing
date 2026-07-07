@@ -28,7 +28,7 @@ COPY packages/contracts/package.json packages/contracts/package.json
 COPY packages/testing/package.json packages/testing/package.json
 
 # Fetch dependencies once (cached, reproducible from lock file)
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
+RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
     pnpm config set network-timeout 600000 && \
     pnpm config set fetch-retries 5 && \
     pnpm config set fetch-retry-mintimeout 20000 && \
@@ -37,7 +37,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
 
 # Install dependencies (will use fetched cache)
 # --prefer-offline uses local cache, --frozen-lockfile ensures reproducibility
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store \
+RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store,sharing=locked \
     pnpm install --frozen-lockfile --prefer-offline
 
 # ============================================================================

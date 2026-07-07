@@ -14,8 +14,8 @@ FROM base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/api/package.json apps/api/package.json
 COPY apps/api/prisma/prototype.prisma apps/api/prisma/prototype.prisma
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm fetch --frozen-lockfile
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm install --offline --frozen-lockfile --filter @tadkar/api...
+RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store pnpm fetch --frozen-lockfile
+RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store pnpm install --offline --frozen-lockfile --filter @tadkar/api...
 WORKDIR /workspace/apps/api
 RUN pnpm prisma:ensure
 

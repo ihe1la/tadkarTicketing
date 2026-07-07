@@ -28,16 +28,12 @@ COPY packages/contracts/package.json packages/contracts/package.json
 COPY packages/testing/package.json packages/testing/package.json
 
 # Fetch dependencies once (cached, reproducible from lock file)
-RUN --mount=type=cache,id=pnpm-store,sharing=locked,target=/pnpm/store \
-    pnpm config set network-timeout 600000 && \
-    pnpm config set fetch-retries 5 && \
-    pnpm config set fetch-retry-mintimeout 20000 && \
-    pnpm config set fetch-retry-maxtimeout 120000 && \
+
     pnpm fetch --frozen-lockfile
 
 # Install dependencies (will use fetched cache)
 # --prefer-offline uses local cache, --frozen-lockfile ensures reproducibility
-RUN --mount=type=cache,id=pnpm-store,sharing=locked,target=/pnpm/store \
+
     pnpm install --frozen-lockfile --prefer-offline
 
 # ============================================================================
@@ -65,31 +61,15 @@ COPY tsconfig.base.json ./
 
 ENV NODE_ENV=production
 
-# Build API
-RUN pnpm --filter @tadkar/api build
 
 # ============================================================================
-# PRODUCTION: Minimal production image
+# PRODUCTION: Reuse the verified build output and generated Prisma Client
 # ============================================================================
-FROM base AS production
+FROM builder AS production
 ENV NODE_ENV=production \
     PNPM_HOME=/pnpm \
     PATH=/pnpm:$PATH
 
-# Copy only production manifests
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY apps/api/package.json apps/api/package.json
-COPY apps/web/package.json apps/web/package.json
-COPY packages/config/package.json packages/config/package.json
-COPY packages/contracts/package.json packages/contracts/package.json
-COPY packages/testing/package.json packages/testing/package.json
-
-# Install production dependencies only (no cache needed for prod image)
-RUN pnpm install --frozen-lockfile --prefer-offline --prod
-
-# Copy built artifacts from builder
-COPY --from=builder /workspace/apps/api/dist ./apps/api/dist
-COPY --from=builder /workspace/apps/api/prisma ./apps/api/prisma
 
 EXPOSE 3000
 

@@ -1,11 +1,8 @@
 node_modules/
+.pnpm-store/
 dist/
-coverage/
+.angular/
 .env
 .env.*
-!.env.example
-analysis/generated/*
-!analysis/generated/.gitkeep
-reference/*.decoded
-*.log
+coverage/
 .DS_Store

@@ -28,13 +28,11 @@ COPY packages/contracts/package.json packages/contracts/package.json
 COPY packages/testing/package.json packages/testing/package.json
 
 # Fetch dependencies once (cached, reproducible from lock file)
-
-    pnpm fetch --frozen-lockfile
+RUN pnpm fetch --frozen-lockfile
 
 # Install dependencies (will use fetched cache)
 # --prefer-offline uses local cache, --frozen-lockfile ensures reproducibility
-
-    pnpm install --frozen-lockfile --prefer-offline
+RUN pnpm install --frozen-lockfile --prefer-offline
 
 # ============================================================================
 # DEVELOPMENT: Live reload with volume mounts
@@ -60,6 +58,7 @@ COPY packages ./packages
 COPY tsconfig.base.json ./
 
 ENV NODE_ENV=production
+RUN pnpm build
 
 
 # ============================================================================

@@ -86,7 +86,7 @@ COPY packages/testing/package.json packages/testing/package.json
 
 # Install dependencies and generate the Prisma Client used at runtime.
 # Prisma is currently a dev dependency, so it must be present during generation.
-RUN pnpm install --frozen-lockfile --prefer-offline
+RUN NODE_ENV=development pnpm install --frozen-lockfile --prefer-offline
 COPY apps/api/prisma ./apps/api/prisma
 RUN pnpm --filter @tadkar/api exec prisma generate --schema=prisma/prototype.prisma
 

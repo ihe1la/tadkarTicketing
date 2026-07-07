@@ -65,9 +65,8 @@ COPY tsconfig.base.json ./
 
 ENV NODE_ENV=production
 
-# Build API and web
-RUN pnpm --filter @tadkar/api build && \
-    pnpm --filter @tadkar/web build
+# Build API only
+RUN pnpm --filter @tadkar/api build
 
 # ============================================================================
 # PRODUCTION: Minimal production image
@@ -91,7 +90,6 @@ RUN pnpm install --frozen-lockfile --prefer-offline --prod
 # Copy built artifacts from builder
 COPY --from=builder /workspace/apps/api/dist ./apps/api/dist
 COPY --from=builder /workspace/apps/api/prisma ./apps/api/prisma
-COPY --from=builder /workspace/apps/web/dist ./apps/web/dist
 
 EXPOSE 3000
 

@@ -13,8 +13,8 @@ WORKDIR /workspace
 FROM base AS deps
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/web/package.json apps/web/package.json
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm fetch --frozen-lockfile
-RUN --mount=type=cache,id=pnpm-store,target=/pnpm/store pnpm install --offline --frozen-lockfile --filter @tadkar/web...
+RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store pnpm fetch --frozen-lockfile
+RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store pnpm install --offline --frozen-lockfile --filter @tadkar/web...
 
 FROM deps AS dev
 WORKDIR /workspace

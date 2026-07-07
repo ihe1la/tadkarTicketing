@@ -28,12 +28,12 @@ COPY packages/contracts/package.json packages/contracts/package.json
 COPY packages/testing/package.json packages/testing/package.json
 
 # Fetch dependencies once (cached, reproducible from lock file)
-RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store \
+
     pnpm fetch --frozen-lockfile
 
 # Install dependencies (will use fetched cache)
 # --prefer-offline uses local cache, --frozen-lockfile ensures reproducibility
-RUN --mount=type=cache,id=s/67ab5eb6-08a1-43ff-b527-329f925a4ad1-/pnpm/store,target=/pnpm/store \
+
     pnpm install --frozen-lockfile --prefer-offline
 
 # ============================================================================
@@ -61,12 +61,6 @@ COPY tsconfig.base.json ./
 
 ENV NODE_ENV=production
 
-# Generate the Prisma Client from the prototype schema before TypeScript compilation.
-RUN pnpm --filter @tadkar/api prisma:ensure
-
-# Build API and web
-RUN pnpm --filter @tadkar/api build && \
-    pnpm --filter @tadkar/web build
 
 # ============================================================================
 # PRODUCTION: Reuse the verified build output and generated Prisma Client
@@ -75,6 +69,7 @@ FROM builder AS production
 ENV NODE_ENV=production \
     PNPM_HOME=/pnpm \
     PATH=/pnpm:$PATH
+
 
 EXPOSE 3000
 

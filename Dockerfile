@@ -69,31 +69,12 @@ RUN pnpm --filter @tadkar/api build && \
     pnpm --filter @tadkar/web build
 
 # ============================================================================
-# PRODUCTION: Minimal production image
+# PRODUCTION: Reuse the verified build output and generated Prisma Client
 # ============================================================================
-FROM base AS production
+FROM builder AS production
 ENV NODE_ENV=production \
     PNPM_HOME=/pnpm \
     PATH=/pnpm:$PATH
-
-# Copy only production manifests
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-COPY apps/api/package.json apps/api/package.json
-COPY apps/web/package.json apps/web/package.json
-COPY packages/config/package.json packages/config/package.json
-COPY packages/contracts/package.json packages/contracts/package.json
-COPY packages/testing/package.json packages/testing/package.json
-
-# Install dependencies and generate the Prisma Client used at runtime.
-# Prisma is currently a dev dependency, so it must be present during generation.
-RUN NODE_ENV=development pnpm install --frozen-lockfile --prefer-offline
-COPY apps/api/prisma ./apps/api/prisma
-RUN pnpm --filter @tadkar/api exec prisma generate --schema=prisma/prototype.prisma
-
-# Copy built artifacts from builder
-COPY --from=builder /workspace/apps/api/dist ./apps/api/dist
-COPY --from=builder /workspace/apps/api/prisma ./apps/api/prisma
-COPY --from=builder /workspace/apps/web/dist ./apps/web/dist
 
 EXPOSE 3000
 

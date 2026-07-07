@@ -305,7 +305,7 @@ const replyTemplates: Record<string, ReplyTemplate[]> = {
   </div>
 </ng-template>` })
 class AppComponent implements OnInit, OnDestroy {
-  private api = 'http://localhost:3000/api/v1';
+  private api = '/api/v1';
   dark = false;
   accounts: Account[] = [];
   user: Account | undefined;

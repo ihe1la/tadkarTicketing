@@ -38,6 +38,7 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.cjs",
             "allowedHosts": [
               "superb-achievement-production-3e75.up.railway.app"
             ]

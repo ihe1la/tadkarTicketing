@@ -15,9 +15,12 @@
   --success-text: #24753b;
   --warning-bg: #fff8e8;
   --warning-text: #8a5b00;
+  --font-sans: "Inter", "Vazirmatn", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-display: "Inter", "Vazirmatn", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-mono: "Cascadia Mono", "Segoe UI Mono", Consolas, monospace;
   display: block;
   color: var(--text);
-  font-family: "Segoe UI Variable Text", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 main {
   min-height: 100vh;
@@ -26,6 +29,7 @@ main {
   font-family: inherit;
   line-height: 1.7;
   font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   font-variant-numeric: tabular-nums;
 }
 main.dark {
@@ -62,12 +66,12 @@ button {
   unicode-bidi: isolate;
   text-align: left;
   display: inline-block;
-  font-family: "Cascadia Mono", "Segoe UI Mono", Consolas, monospace;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums slashed-zero;
   letter-spacing: .01em;
 }
 h1, h2, h3, .brand b, .stats b {
-  font-family: "Segoe UI Variable Display", "Segoe UI Variable Text", "Segoe UI", Tahoma, sans-serif;
+  font-family: var(--font-display);
   letter-spacing: -.015em;
 }
 

@@ -591,9 +591,13 @@ textarea::placeholder, input::placeholder { color: color-mix(in srgb, var(--text
 /* RESPONSIVE */
 @media (max-height: 900px) and (min-width: 431px) {
   .login {
+    position: fixed;
+    inset: 0 auto auto 0;
     width: calc(100% / .9);
-    min-height: calc(100dvh / .9);
-    zoom: .9;
+    height: calc(100dvh / .9);
+    min-height: 0;
+    transform: scale(.9);
+    transform-origin: top left;
   }
 }
 @media (max-width: 900px) {

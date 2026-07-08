@@ -23,7 +23,7 @@
   font-family: var(--font-sans);
 }
 main {
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--bg);
   color: var(--text);
   font-family: inherit;
@@ -77,7 +77,7 @@ h1, h2, h3, .brand b, .stats b {
 
 /* LOGIN */
 .login {
-  min-height: 100vh;
+  min-height: 100dvh;
   background: linear-gradient(135deg, var(--surface) 0%, var(--surface-elevated) 100%);
   display: grid;
   place-content: center;
@@ -165,9 +165,9 @@ h1, h2, h3, .brand b, .stats b {
 
 /* APP SHELL */
 .app {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
-  grid-template: 'head head' 72px 'side content' calc(100vh - 72px)/240px 1fr;
+  grid-template: 'head head' 72px 'side content' minmax(0, calc(100dvh - 72px)) / 240px minmax(0, 1fr);
   background: var(--bg);
 }
 header {
@@ -241,9 +241,10 @@ header {
 /* CONTENT */
 .content {
   grid-area: content;
+  min-width: 0;
   padding: 1.75rem clamp(1.25rem, 3vw, 3rem);
   overflow: auto;
-  max-height: calc(100vh - 68px);
+  max-height: calc(100dvh - 72px);
 }
 .page-head {
   display: flex;
@@ -588,6 +589,17 @@ textarea::placeholder, input::placeholder { color: color-mix(in srgb, var(--text
 .bar b { min-width: 30px; text-align: left; font-size: 0.85rem; color: var(--text); }
 
 /* RESPONSIVE */
+@media (max-height: 900px) and (min-width: 431px) {
+  .login {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .brand span { width: 3rem; height: 3rem; font-size: 1.75rem; }
+  .brand h1 { font-size: 1.5rem; }
+  .login-card { padding: 1.4rem 1.75rem; }
+  .accounts { gap: .6rem; margin-top: 1rem; }
+  .accounts button { min-height: 0; padding: .72rem 1rem; }
+}
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; }
   .grid-detail { grid-template-columns: 1fr; }
@@ -602,7 +614,7 @@ textarea::placeholder, input::placeholder { color: color-mix(in srgb, var(--text
   .header-center { display: none; }
   .header-left { gap: .25rem; }
   .ghost { padding-inline: .55rem; }
-  .content { padding: 1rem 1rem 6rem; max-height: calc(100vh - 68px); }
+  .content { padding: 1rem 1rem 6rem; max-height: calc(100dvh - 68px); }
   .mobile-nav {
     position: fixed;
     z-index: 20;
